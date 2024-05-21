@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="taskbar.css" />
+</head>
+<body>
+    <div class="taskbar">
+        <div class="logo-container">
+            <a href="Marketplace.html">
+                <img src="https://opensooqui2.os-cdn.com/prod/public/images/openSooqLogo/openSooqLogoDesktop.svg" alt="OpenSooq Logo">
+            </a>
+        </div>
+        <div class="navigation-links">
+            <a href="aboutus.html" target="_blank" class="aboutus">About Us</a>
+            <a href="ContactUs.html" target="_blank" class="contactus">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="details-container">
+        <img src="https://opensooq-images.os-cdn.com/previews/0x720/6f/a2/6fa281e2fdfffabbc61dd9f636d319c7d7fae57a1473a9c888ce6201f48cb528.jpg.webp" alt="Photo 1">
+
+        <table>
+            <tr><th>Owner's Name</th><td>شركة حنايشة لتجارة السيارات</td></tr>
+            <tr><th>Phone Number</th><td>+972568453009</td></tr>
+            <tr><th>City</th><td>Jenin</td></tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Car Make</th>
+                <td>Volkswagen</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <th>Regional Specs</th>
+                <td>European Specs</td>
+            </tr>
+            <tr>
+                <th>Transmission</th>
+                <td>Automatic</td>
+            </tr>
+            <tr>
+                <th>Fuel</th>
+                <td>Gasoline</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>White</td>
+            </tr>
+            <tr>
+                <th>Condition</th>
+                <td>Used</td>
+            </tr>
+            <tr>
+                <th>Kilometers</th>
+                <td>29,500</td>
+            </tr>
+            <tr>
+                <th>Payment Method</th>
+                <td>Cash</td>
+            </tr>
+            <tr>
+                <th>Car Sector</th>
+                <td>Private Vehicle</td>
+            </tr>
+            <tr>
+                <th>Number of Seats</th>
+                <td>5</td>
+            </tr>
+            <tr>
+                <th>Wheel Drive</th>
+                <td>Front-wheel drive</td>
+            </tr>
+            <tr>
+                <th>Car Plate</th>
+                <td>Palestinian</td>
+            </tr>
+            <tr>
+                <th>Engine Size (cc)</th>
+                <td>1000cc</td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>
