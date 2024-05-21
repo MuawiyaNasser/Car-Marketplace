@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        html {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            color: #333;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        details {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        summary {
+            font-weight: bold;
+            color: #0056b3;
+            cursor: pointer;
+        }
+
+     
+
+            summary:before {
+                content: '▶';
+                padding-right: 8px;
+            }
+
+        details[open] summary:before {
+            content: '▼';
+        }
+
+        .contact-info {
+            background-color: #e7f2fd;
+            border-left: 5px solid #0056b3;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .social-links img {
+            height: 30px;
+            width: 30px;
+            vertical-align: middle;
+        }
+
+        .social-links a {
+            margin-right: 10px;
+        }
+
+        .social-links img:hover {
+            opacity: 0.7;
+        }
+        a {
+            text-decoration: none;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="taskbar.css" />
+
+</head>
+<body>
+    <div class="taskbar">
+        <div class="logo-container">
+            <a href="Marketplace.html">
+                <img src="https://opensooqui2.os-cdn.com/prod/public/images/openSooqLogo/openSooqLogoDesktop.svg" alt="OpenSooq Logo">
+            </a>
+        </div>
+        <div class="navigation-links">
+            <a href="aboutus.html" class="aboutus">About Us</a>
+            <a href="ContactUs.html" class="contactus">Contact Us</a>
+
+        </div>
+    </div>
+
+
+    <h2>Contact Us</h2>
+    <h3>Frequently Asked Questions (FAQ)</h3>
+
+    <p>
+        Here are some common questions about our car listings:
+    </p>
+
+    <details>
+        <summary>Are the listed cars available for test drives?</summary>
+        <p>Yes, all the listed cars are available for test drives. You can schedule a test drive by contacting the owner.</p>
+    </details>
+
+    <details>
+        <summary>Do you offer financing options for purchasing cars?</summary>
+        <p>It depends on the seller, most likely, yes.</p>
+    </details>
+
+    <details>
+        <summary>What is the process for scheduling a viewing of a car?</summary>
+        <p>To schedule a viewing of a car, simply contact the seller through phone or email.</p>
+    </details>
+    <details>
+        <summary>Can I trade-in my current car for one of the listed cars?</summary>
+        <p>It depends on the seller. Some sellers may accept trade-ins. Please contact them directly for more information.</p>
+    </details>
+
+    <div class="contact-info">
+        <p>If you have any other questions, feel free to contact us:</p>
+        <p>Email: info@shobiddak.com</p>
+        <p>Phone: +970599989846</p>
+    </div>
+
+    <h3>Follow Us on Social Media</h3>
+    <div class="social-links">
+        <a href="https://www.facebook.com/Shobiddak2008" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/shobiddak.ps/" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/024/170/870/original/instagram-icon-logo-symbol-free-png.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/OpenSooqPal" class="twitter" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/256/733/733579.png" alt="Twitter">
+        </a>
+    </div>
+</body>
+</html>
