@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Cars for Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .taskbar {
+            background-color: #004080;
+            color: lemonchiffon;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            left: 0;
+            z-index: 1000; 
+        }
+
+
+            .taskbar img {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                height: 40px;
+            }
+
+        .contactus, .aboutus {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+
+        .cars-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 50px; 
+        }
+
+
+        .car {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 300px;
+            text-align: center;
+            margin: 10px;
+        }
+
+            .car img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .car h3, .car p {
+                margin: 15px 0;
+            }
+
+        .date-display {
+            text-align: center;
+            padding: 5px;
+            margin: 20px auto;
+            background-color: #004080;
+            color: lemonchiffon;
+            border-radius: 4px;
+            width: fit-content;
+            position: absolute;
+            top: 70px; 
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <br /><br /><br /><br />
+    <div id="currentDate" class="date-display"></div>
+    <div id="currentDate" class="date-display"></div>
+    <script>
+        const dateElement = document.getElementById('currentDate');
+        const currentDate = new Date().toLocaleDateString('en-US');
+        dateElement.textContent = `Today's Date: ${currentDate}`;
+    </script>
+    <link rel="stylesheet" href="form.css">
+    <form id="carInquiryForm" class="car-form">
+        <h2>Car Inquiry Form</h2>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" required>
+
+
+        <p>Preferred Contact Method:</p>
+        <div class="radio-inline">
+            <input type="radio" id="contactEmail" name="contactMethod" value="Email">
+            <label for="contactEmail">Email</label>
+        </div>
+        <div class="radio-inline">
+            <input type="radio" id="contactPhone" name="contactMethod" value="Phone">
+            <label for="contactPhone">Phone</label>
+        </div>
+
+        <p>Interested Car Types:</p>
+        <div class="checkbox-inline">
+            <input type="checkbox" id="suv" name="carType" value="SUV">
+            <label for="suv">SUV</label>
+        </div>
+        <div class="checkbox-inline">
+            <input type="checkbox" id="sedan" name="carType" value="Sedan">
+            <label for="sedan">Sedan</label>
+        </div>
+
+
+        <br />        <label for="carBrand">Preferred Car Brand:</label>
+        <select id="carBrand" name="carBrand">
+            <option value="Hyundai">Hyundai</option>
+            <option value="Skoda">Skoda</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Opel">Opel</option>
+            <option value="Seat">Seat</option>
+
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="additionalInfo">Additional Information:</label>
+        <textarea id="additionalInfo" name="additionalInfo"></textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="visitDate"> Visit Date:</label>
+        <input type="date" id="visitDate" name="visitDate">
+        <br /><br />
+        <button type="submit">Submit Inquiry</button>
+    </form>
+
+    <script>
+        document.querySelector('#carInquiryForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const fullName = document.querySelector('#carInquiryForm input[name="fullName"]').value.trim();
+            const phoneNumber = document.querySelector('#carInquiryForm input[name="phoneNumber"]').value.trim();
+            const visitDate = document.querySelector('#carInquiryForm input[name="visitDate"]').value.trim();
+
+            let errors = [];
+
+            if (!fullName) {
+                errors.push("Full Name is required.");
+            }
+
+            if (!/^059\d{7}$/.test(phoneNumber)) {
+                errors.push("Phone Number must start with '059' followed by 7 numbers.");
+            }
+
+            if (!visitDate) {
+                errors.push(" Visit Date is required.");
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+
+                alert("Please correct the following errors:\n" + errors.join("\n"));
+            } else {
+                alert("Form is valid! Submitting the form...");
+            }
+        });
+    </script>
+
+    <div class="taskbar">
+        <a href="Marketplace.html">
+            <img src="https://opensooqui2.os-cdn.com/prod/public/images/openSooqLogo/openSooqLogoDesktop.svg" alt="OpenSooq Logo">
+        </a>
+        <a href="aboutus.html" target="_blank" class="aboutus">About Us</a>
+        <a href="ContactUs.html" target="_blank" class="contactus">Contact Us</a>
+
+    </div>
+    <div class="cars-container">
+
+        <div class="car">
+            <a href="car1_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/1c/6c/1c6c3ed7898a3115bd300f482c99c9fc18df44eea25af2768d2b2b3fbc684232.jpg.webp" alt="Seat Arona Fr">
+            </a>
+            <h3>Seat Arona Fr</h3>
+            <p>105,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+            <a href="car2_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/ca/4d/ca4d48103acb0c9f6a191ba735bb640333984b3e15e816e5247a19840e807b4f.jpg.webp" alt="Skoda">
+            </a><br>
+            <h3>Skoda Superb</h3>
+            <p>169,000 ILS</p>
+        </div>
+
+        <div class="car">
+            <a href="car3_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/95/a1/95a184c6c99511146ab403aefb123ffb9b6f9a164aa3c5915ffd3536defcff04.jpg.webp" alt="Kia">
+            </a><br>
+            <h3>Kia Niro</h3>
+            <p>120,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car4_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/c2/81/c2812a5c00661b18396c8ea0bbcda2648949f421c3421aedef61d5c44108e10c.jpg.webp" alt="Hyundai">
+            </a><br>
+            <h3>Hyundai Venue</h3>
+            <p>97,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car5_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/ea/3d/ea3dc9e99fc82ac0122c21e7fb037915c32d96f472077fe53373f059bed4dc19.jpg.webp" alt="Hyundai">
+            </a><br>
+            <h3>Hyundai SantaFe</h3>
+            <p>150,000 ILS</p>
+        </div>
+        <div class="car">
+
+
+            <a href="car6_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/7a/10/7a100a42c9e361fc0ef4332b19911286af07ec4005125a311cc328398c278263.jpg.webp" alt="Skoda">
+            </a><br>
+            <h3>Skoda Kodiaq Sport Line</h3>
+            <p>205,000 ILS</p>
+
+        </div>
+        <div class="car">
+
+
+
+            <a href="car7_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/08/bd/08bdd59d5e3a2c1b369582610666a06ed7b0aa72a10a138b06d6e6c112e02d03.jpg.webp" alt="Mercedes">
+            </a><br>
+            <h3>Mercedes E280</h3>
+            <p>60,000 ILS</p>
+
+        </div>
+
+        <div class="car">
+
+            <a href="car8_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/cb/d2/cbd28cd7a15bf3c85733a62fb0ef31d93c5b0e457619e410a5c15e2e55800be6.jpg.webp" alt="Vw">
+            </a><br>
+            <h3>Volkswagen Polo</h3>
+            <p>97,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car9_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/01/6a/016afe251bb06ff71c2b3b1eab10df73c13d5fbb946117c3155db39314f9a21d.jpg.webp" alt="Skoda">
+            </a><br>
+            <h3>Skoda Kodiaq </h3>
+            <p>188,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+
+            <a href="car10_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/97/5e/975e95031f8284f006299a6eeaca6faad2f2a5c2875b7b32ec9496a2acf00ef4.jpg.webp" alt="Opel">
+            </a><br>
+            <h3>Opel Corsa</h3>
+            <p>47,500 ILS</p>
+        </div>
+        <div class="car">
+
+
+            <a href="car11_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/1f/1f/1f1f93787eef5847b83c51ee49438a0be6c9e56d234e026d5efa099b3fe4f0e3.jpg.webp" alt="Seat">
+            </a><br>
+            <h3>Seat Ibiza</h3>
+            <p>86,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+            <a href="car12_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/5e/5e/5e5e9c6c0459587b69180439aaa355fdc518c5c2a180f09ab08434f48aa93ade.jpg.webp" alt="Kia">
+            </a><br>
+            <h3>Kia Cerato</h3>
+            <p>120,000 ILS</p>
+
+        </div>
+        <div class="car">
+
+            <a href="car13_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/ac/ef/acef39ca8d0429940f89b60afcb190e3461b163bcf240e4f50615ae2eaf6779e.jpg.webp" alt="BMW">
+            </a><br>
+            <h3>BMW 330E</h3>
+            <p>215,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+            <a href="car14_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/aa/a9/aaa9bd4855a1675cd9617e61ac761cd901d893a9a4e00b6ef4a9de86fc436916.jpg.webp" alt="Kia">
+            </a><br>
+            <h3>Kia Sportage Gt-Line</h3>
+            <p>146,000 ILS</p>
+
+        </div>
+        <div class="car">
+
+            <a href="car15_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/9e/d2/9ed2f997f9d4af2c61ce759abc694bc60f6303da495be7e3b0de99aaad304da5.jpg.webp" alt="Seat">
+            </a><br>
+            <h3>Seat Leon</h3>
+            <p>120,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car16_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/80/05/800521b3c64f07f5bd5ebd8cc924939b92bbb8bfd02d14bbfe7a4236af6e56e6.jpg.webp" alt="Seat">
+            </a>
+            <br>
+            <h3>Seat Arona FR</h3>
+            <p>115,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car17_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/4e/5f/4e5fd0d389d7dc69d3017841d99ce1cf24266651339f39ed7e155489778e4484.jpg.webp" alt="Hyundai">
+            </a><br>
+            <h3>Hyundai Ioniq</h3>
+            <p>110,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+            <a href="car18_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/dd/c3/ddc3d892e93f9e991459841b06f205b44543568818cd76e18246f793943ac3a7.jpg.webp" alt="Bmw">
+            </a><br>
+            <h3>Bmw X5</h3>
+            <p>455,000 ILS</p>
+        </div>
+
+        <div class="car">
+
+
+            <a href="car19_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/d3/24/d324aa7f6b160b8d473d5a7a3eae4bf83f4969b68a57c201807bb4154812b3a2.jpg.webp" alt="Skoda">
+            </a><br>
+            <h3>Skoda Superb</h3>
+            <p>158,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car20_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/0b/d4/0bd4dfea12948151e3e8345f671387ef5f7e6e862068757a552804ace70a5909.jpg.webp" alt="Mercedes">
+            </a><br>
+            <h3>Mercedes GLC E300</h3>
+            <p>300,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car21_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/17/58/175865189babbd9dbaca0953fca89480bb635eaac65269f908d06443ebdd5354.jpg.webp" alt="Vw">
+            </a><br>
+            <h3>Volkswagen T-cross</h3>
+            <p>113,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car22_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/ba/3d/ba3d781d0f348cae65bbca408bb2d07b02b2b9d01146872bb70e1d9c5512f8a0.jpg.webp" alt="Vw">
+            </a><br>
+            <h3>Volkswagen Polo R Line</h3>
+            <p>102,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car23_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/55/81/558121942a10e936722966529d528ebcd9b2fb2e5c038cdb740de7059f1b3250.jpg.webp" alt="Skoda">
+            </a><br>
+            <h3>Skoda Kamiq</h3>
+            <p>119,000 ILS</p>
+        </div>
+        <div class="car">
+
+            <a href="car24_details.html" target="_blank">
+                <img src="https://opensooq-images.os-cdn.com/previews/0x720/75/a0/75a0e58dd34feeef43121aaeb82bcd976e7198c437efcd1bf893ba60399aed1c.jpg.webp" alt="Bmw">
+            </a><br>
+            <h3>Bmw 330E</h3>
+            <p>203,000 ILS</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
