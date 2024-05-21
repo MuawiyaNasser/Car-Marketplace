@@ -1,0 +1,47 @@
+﻿  .taskbar {
+  width: 100%;
+  background-color: #004080;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+
+  .taskbar .logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  }
+
+  .taskbar .navigation-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  }
+
+ .taskbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  transition: color 0.2s ease-in-out;
+  }
+
+  .taskbar a:hover {
+  color: #ccc;
+  }
+
+     .contactus, .aboutus {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+  body {
+  padding-top: 60px;
+  }

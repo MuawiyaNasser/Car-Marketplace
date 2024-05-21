@@ -1,0 +1,60 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding-top: 100px; 
+}
+.car-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+    .car-form h2 {
+        text-align: center;
+        color: #333;
+    }
+    .car-form label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    .car-form input[type="text"],
+    .car-form input[type="number"],
+    .car-form input[type="date"],
+    .car-form select,
+    .car-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .car-form input[type="radio"],
+    .car-form input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .car-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #004080;
+        color: lemonchiffon;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+        .car-form button:hover {
+            background-color: #003366;
+        }
+.checkbox-inline,
+.radio-inline {
+    display: inline-block;
+    margin-right: 15px; 
+}
+    .checkbox-inline label,
+    .radio-inline label {
+        margin-left: 5px;
+    }
+.car-form br {
+    display: none;
+}
